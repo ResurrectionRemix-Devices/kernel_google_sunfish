@@ -4,6 +4,11 @@
 
 #if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
 
+#define __LSE_PREAMBLE	".arch_extension lse\n"
+
+#include <linux/compiler_types.h>
+#include <linux/export.h>
+#include <linux/jump_label.h>
 #include <linux/stringify.h>
 #include <asm/alternative.h>
 
